@@ -1,8 +1,8 @@
 # Dependencies
 node_modules/
 
-# Compiled CSS - НЕ комітимо згенеровані файли (GitHub Actions збудує їх)
-dist/
+# Compiled CSS - ЗАКОМЕНТОВАНО щоб CSS працював на GitHub Pages
+# dist/
 
 # Logs
 logs
