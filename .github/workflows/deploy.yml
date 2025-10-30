@@ -35,7 +35,9 @@ jobs:
         run: |
           mkdir -p _site
           cp demo.html _site/index.html
-          cp -r dist _site/dist
+          mkdir -p _site/dist/css
+          cp dist/css/*.css _site/dist/css/
+          cp dist/css/*.map _site/dist/css/ || true
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
