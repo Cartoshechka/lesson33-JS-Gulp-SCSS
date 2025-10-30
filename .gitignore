@@ -1,9 +1,6 @@
 # Dependencies
 node_modules/
 
-# Compiled CSS - ЗАКОМЕНТОВАНО щоб CSS працював на GitHub Pages
-# dist/
-
 # Logs
 logs
 *.log
@@ -14,7 +11,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
+# dist - ВИДАЛЕНО щоб CSS працював на GitHub Pages
 dist-ssr
 *.local
 

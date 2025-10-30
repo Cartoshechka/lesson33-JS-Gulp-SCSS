@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/*
+ * 1. SCSS КОМПІЛЯЦІЯ
+ * Цей файл має бути скомпільований у звичайний CSS
+ */
+.test-container {
+  padding: 24px;
+}
+.test-container .nested-element {
+  color: #4a90e2;
+}
+.test-container .nested-element:hover {
+  color: #7ed321;
+}
+
+.prefixes-test {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.mixin-example {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.math-test {
+  width: 33.3333333333%;
+  margin: 32px;
+  padding: 16px;
+}
+
+.functions-test {
+  background-color: rgb(161.9142857143, 197.9142857143, 240.0857142857);
+  border-color: rgb(99.6639344262, 166.8975409836, 26.1024590164);
+}
+
+.interpolation-test {
+  margin-left: 10px;
+}
+
+.base-button, .extended-button {
+  padding: 10px;
+  border: none;
+}
+
+.extended-button {
+  background-color: blue;
+}
+/*# sourceMappingURL=test-features.css.map */
