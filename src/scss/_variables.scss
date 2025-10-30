@@ -1,0 +1,36 @@
+// Кольори для навчального шаблону
+$primary-color: #4a90e2; // Синій
+$secondary-color: #7ed321; // Зелений
+$accent-color: #f5a623; // Помаранчевий
+$text-color: #333333; // Темно-сірий
+$text-light: #666666; // Світло-сірий
+$background: #ffffff; // Білий
+$background-alt: #f8f9fa; // Світло-сірий фон
+$border-color: #e0e0e0; // Сірий для рамок
+
+// Розміри spacing
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 48px;
+
+// Розміри border-radius
+$border-radius: 8px;
+
+// Шрифти
+$font-family:
+  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+  Arial, sans-serif;
+
+// Розміри шрифтів
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 24px;
+$font-size-xxl: 32px;
+
+// Тіні
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);

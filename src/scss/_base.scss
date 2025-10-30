@@ -1,0 +1,81 @@
+// Базові стилі для навчального шаблону
+@use 'variables' as *;
+@use 'sass:color';
+@use 'mixins' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  color: $text-color;
+  background-color: $background-alt;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: $spacing-sm;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: $font-size-xxl;
+}
+
+h2 {
+  font-size: $font-size-xl;
+}
+
+h3 {
+  font-size: $font-size-lg;
+}
+
+p {
+  margin-bottom: $spacing-sm;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: color.adjust($primary-color, $lightness: -15%);
+  }
+}
+
+.container {
+  @include container;
+}
+
+// Красивий scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background-alt;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  border-radius: 5px;
+
+  &:hover {
+    background: color.adjust($primary-color, $lightness: -10%);
+  }
+}

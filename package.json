@@ -1,0 +1,32 @@
+{
+  "name": "gulp-scss-project",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Gulp project with SCSS, autoprefixer, live reload, and minification",
+  "scripts": {
+    "gulp": "gulp",
+    "gulp:build": "gulp build",
+    "gulp:styles": "gulp styles",
+    "gulp:format": "gulp format",
+    "start": "gulp"
+  },
+  "keywords": [
+    "gulp",
+    "scss",
+    "sass",
+    "autoprefixer",
+    "browsersync",
+    "live-reload"
+  ],
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "gulp": "^5.0.1",
+    "gulp-autoprefixer": "^10.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-prettier": "^6.0.0",
+    "gulp-rename": "^2.1.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.93.2"
+  }
+}

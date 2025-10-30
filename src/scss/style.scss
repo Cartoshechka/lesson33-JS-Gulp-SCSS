@@ -1,0 +1,523 @@
+// Головний файл стилів для навчального шаблону
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'base';
+@use 'sass:color';
+
+// === HEADER ===
+.page-header {
+  background: linear-gradient(
+    135deg,
+    $primary-color 0%,
+    color.adjust($primary-color, $lightness: -12%) 100%
+  );
+  color: white;
+  padding: $spacing-lg $spacing-md;
+  text-align: center;
+  box-shadow: $shadow-md;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInDown 0.6s ease-out;
+
+  // Декоративний фон
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  // Додатковий декоративний елемент
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: $font-size-xxl;
+    margin-bottom: $spacing-xs;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .subtitle {
+    font-size: $font-size-lg;
+    opacity: 0.95;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+}
+
+// Анімації
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+// === PAGE WRAPPER ===
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $background-alt;
+}
+
+// === MAIN CONTENT ===
+.main-content {
+  flex: 1;
+  padding: $spacing-xl $spacing-md;
+}
+
+// === SECTIONS ===
+.info-section,
+.demo-section,
+.commands-section {
+  margin-bottom: $spacing-xl;
+  animation: fadeIn 0.8s ease-out;
+
+  h2 {
+    color: $primary-color;
+    margin-bottom: $spacing-md;
+    padding-bottom: $spacing-sm;
+    border-bottom: 3px solid $primary-color;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: $secondary-color;
+      border-radius: 2px;
+      animation: slideInLeft 0.6s ease-out;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60px;
+  }
+}
+
+// === FEATURES GRID ===
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-md;
+  margin-top: $spacing-md;
+}
+
+.feature-item {
+  @include card;
+  text-align: center;
+  padding: $spacing-md;
+  animation: fadeInUp 0.6s ease-out backwards;
+
+  // Затримка для послідовної появи
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  &:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  &:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+
+  .feature-icon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: $spacing-sm;
+    line-height: 1;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+
+  h3 {
+    color: $primary-color;
+    margin-bottom: $spacing-xs;
+    font-size: $font-size-lg;
+  }
+
+  p {
+    color: $text-light;
+    font-size: $font-size-sm;
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// === DEMO CARD ===
+.demo-card {
+  @include card;
+  margin-bottom: $spacing-md;
+  background: white;
+
+  h3 {
+    color: $text-color;
+    margin-bottom: $spacing-md;
+    font-size: $font-size-lg;
+    font-weight: 600;
+  }
+}
+
+// === BUTTONS ===
+.button-group {
+  display: flex;
+  gap: $spacing-sm;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: $border-radius;
+  font-size: $font-size-base;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+
+  // Ripple ефект фон
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition:
+      width 0.6s,
+      height 0.6s;
+  }
+
+  &:active::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  &-primary {
+    @include button($primary-color);
+  }
+
+  &-secondary {
+    @include button($secondary-color);
+  }
+
+  &-outline {
+    background-color: transparent;
+    color: $primary-color;
+    border: 2px solid $primary-color;
+
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// === CARD GRID ===
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $spacing-md;
+}
+
+.card {
+  background: white;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: $shadow-lg;
+
+    .card-header {
+      background: linear-gradient(
+        135deg,
+        color.adjust($primary-color, $lightness: -5%) 0%,
+        color.adjust($primary-color, $lightness: -15%) 100%
+      );
+    }
+  }
+
+  .card-header {
+    background: linear-gradient(
+      135deg,
+      $primary-color 0%,
+      color.adjust($primary-color, $lightness: -10%) 100%
+    );
+    color: white;
+    padding: $spacing-md;
+    font-weight: 600;
+    text-align: center;
+    font-size: $font-size-lg;
+    transition: background 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-body {
+    padding: $spacing-md;
+    text-align: center;
+    color: $text-light;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+  }
+}
+
+// === CODE BLOCKS ===
+.code-block {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  border-radius: $border-radius;
+  padding: $spacing-md;
+  margin-bottom: $spacing-sm;
+  border-left: 4px solid $secondary-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateX(4px);
+    box-shadow: $shadow-md;
+    border-left-width: 6px;
+  }
+
+  code {
+    color: $secondary-color;
+    font-family: 'Courier New', 'Monaco', monospace;
+    font-size: $font-size-base;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(126, 211, 33, 0.3);
+  }
+
+  &::after {
+    content: '→';
+    color: $secondary-color;
+    font-size: $font-size-lg;
+    margin-left: $spacing-md;
+    opacity: 0;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+    transform: translateX(-10px);
+  }
+
+  &:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// === FOOTER ===
+.page-footer {
+  background: linear-gradient(
+    135deg,
+    $text-color 0%,
+    color.adjust($text-color, $lightness: -10%) 100%
+  );
+  color: white;
+  padding: $spacing-lg $spacing-md;
+  margin-top: auto;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+
+  // Декоративний елемент
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  // Верхня декоративна лінія
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      $primary-color,
+      $secondary-color,
+      $accent-color
+    );
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  p {
+    margin: $spacing-xs 0;
+    opacity: 0.9;
+    font-size: $font-size-base;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+
+    strong {
+      font-weight: 600;
+      color: white;
+    }
+
+    &:last-child {
+      opacity: 0.7;
+      font-size: $font-size-sm;
+      margin-top: $spacing-sm;
+      padding-top: $spacing-sm;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+    &:hover {
+      opacity: 0.8;
+      border-bottom-color: white;
+    }
+  }
+}
+
+// === RESPONSIVE ===
+@media (max-width: 768px) {
+  .page-header {
+    padding: $spacing-md;
+
+    h1 {
+      font-size: $font-size-xl;
+    }
+
+    .subtitle {
+      font-size: $font-size-base;
+    }
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .button-group {
+    flex-direction: column;
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .code-block {
+    flex-direction: column;
+    align-items: flex-start;
+
+    code {
+      margin-bottom: $spacing-xs;
+    }
+  }
+}

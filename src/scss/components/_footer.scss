@@ -1,0 +1,15 @@
+// Стилі для футера
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.footer {
+  @include flex-center;
+  background-color: $text-color;
+  color: white;
+  padding: $spacing-medium;
+  margin-top: $spacing-large;
+
+  &__text {
+    font-size: $font-size-small;
+  }
+}

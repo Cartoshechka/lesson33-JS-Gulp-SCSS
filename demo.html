@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gulp + SCSS | Домашнє завдання</title>
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="page-header">
+            <div class="container">
+                <h1>Gulp + SCSS</h1>
+                <p class="subtitle">Автоматизація роботи з препроцесором</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="container">
+                <section class="info-section">
+                    <h2>Реалізовані можливості:</h2>
+                    <div class="features">
+                        <div class="feature-item">
+                            <span class="feature-icon">📦</span>
+                            <h3>SCSS препроцесор</h3>
+                            <p>Компіляція SCSS в CSS з використанням змінних, міксінів та вкладеності</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🔄</span>
+                            <h3>Live Reload</h3>
+                            <p>Автоматичне оновлення сторінки при зміні файлів через BrowserSync</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🎯</span>
+                            <h3>Автопрефікси</h3>
+                            <p>Автоматичне додавання вендорних префіксів для кросбраузерності</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✨</span>
+                            <h3>Форматування коду</h3>
+                            <p>Prettier для автоматичного форматування SCSS файлів</p>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">⚡</span>
+                            <h3>Мінімізація</h3>
+                            <p>Стиснення CSS для продакшн збірки через CleanCSS</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="demo-section">
+                    <h2>Приклад використання стилів:</h2>
+                    <div class="demo-card">
+                        <h3>Кнопки з SCSS міксінами</h3>
+                        <div class="button-group">
+                            <button class="btn btn-primary">Основна</button>
+                            <button class="btn btn-secondary">Вторинна</button>
+                            <button class="btn btn-outline">Обведена</button>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Картки з hover ефектами</h3>
+                        <div class="card-grid">
+                            <div class="card">
+                                <div class="card-header">Gulp</div>
+                                <div class="card-body">Автоматизація задач</div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">SCSS</div>
+                                <div class="card-body">Препроцесор CSS</div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">BrowserSync</div>
+                                <div class="card-body">Live reload сервер</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="commands-section">
+                    <h2>Команди для запуску:</h2>
+                    <div class="code-block">
+                        <code>yarn start</code> - Розробка з live reload
+                    </div>
+                    <div class="code-block">
+                        <code>yarn gulp:build</code> - Продакшн збірка
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="page-footer">
+            <div class="container">
+                <p><strong>Домашнє завдання #16: Gulp + SCSS</strong></p>
+                <p>Автоматизація роботи з препроцесором стилів</p>
+                <p style="font-size: 12px; opacity: 0.6; margin-top: 16px;">
+                    Learning template
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+

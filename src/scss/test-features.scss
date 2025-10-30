@@ -1,0 +1,74 @@
+// Тестовий файл для демонстрації всіх можливостей Gulp
+
+/*
+ * 1. SCSS КОМПІЛЯЦІЯ
+ * Цей файл має бути скомпільований у звичайний CSS
+ */
+
+// Імпорт змінних
+@use 'variables' as *;
+@use 'sass:color';
+
+// 2. ВКЛАДЕНІСТЬ (SCSS фіча)
+.test-container {
+  padding: $spacing-md;
+
+  .nested-element {
+    color: $primary-color;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+// 3. ВЕНДОРНІ ПРЕФІКСИ (autoprefixer додасть автоматично)
+.prefixes-test {
+  display: flex; // Буде: -webkit-box, -ms-flexbox, flex
+  transform: rotate(45deg); // Буде: -webkit-transform, transform
+  user-select: none; // Буде: -webkit-, -moz-, -ms-, user-select
+  transition: all 0.3s; // Буде: -webkit-transition, transition
+  box-sizing: border-box; // Буде: -webkit-box-sizing, box-sizing
+}
+
+// 4. МІКСІНИ
+@mixin test-mixin($color, $size) {
+  color: $color;
+  font-size: $size;
+  font-weight: bold;
+}
+
+.mixin-example {
+  @include test-mixin(red, 20px);
+}
+
+// 5. МАТЕМАТИЧНІ ОПЕРАЦІЇ
+.math-test {
+  width: calc(100% / 3);
+  margin: $spacing-sm * 2;
+  padding: $spacing-md - 8px;
+}
+
+// 6. ФУНКЦІЇ (нові color.adjust)
+.functions-test {
+  background-color: color.adjust($primary-color, $lightness: 20%);
+  border-color: color.adjust($secondary-color, $lightness: -10%);
+}
+
+// 7. ІНТЕРПОЛЯЦІЯ
+$side: left;
+
+.interpolation-test {
+  margin-#{$side}: 10px;
+}
+
+// 8. EXTEND
+.base-button {
+  padding: 10px;
+  border: none;
+}
+
+.extended-button {
+  @extend .base-button;
+  background-color: blue;
+}

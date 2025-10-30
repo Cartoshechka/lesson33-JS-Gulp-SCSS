@@ -1,0 +1,58 @@
+// Міксіни для навчального шаблону
+@use 'variables' as *;
+@use 'sass:color';
+
+// Міксін для кнопок
+@mixin button($bg-color, $text-color: white) {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: $border-radius;
+  font-size: $font-size-base;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  user-select: none;
+
+  &:hover {
+    background-color: color.adjust($bg-color, $lightness: -8%);
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Міксін для карток
+@mixin card {
+  background: $background;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding: $spacing-md;
+  transition: all 0.3s ease;
+  box-shadow: $shadow-sm;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-4px);
+  }
+}
+
+// Міксін для контейнера
+@mixin container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+// Міксін для flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,29 @@
+// Стилі для хедера
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.header {
+  @include flex-center;
+  background-color: $primary-color;
+  color: white;
+  padding: $spacing-medium;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  &__title {
+    font-size: $font-size-large;
+    font-weight: bold;
+  }
+
+  &__nav {
+    display: flex;
+    gap: $spacing-medium;
+
+    a {
+      color: white;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
