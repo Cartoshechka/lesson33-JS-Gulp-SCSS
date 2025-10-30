@@ -75,7 +75,7 @@ gulpfile.js         - Конфігурація Gulp
 ## 📦 Технології
 
 - Gulp 5
-- Sass
+- SCSS (Sass)
 - Autoprefixer
 - CleanCSS
 - BrowserSync

@@ -1,7 +1,7 @@
 # Dependencies
 node_modules/
 
-# Compiled CSS
+# Compiled CSS - НЕ комітимо згенеровані файли (GitHub Actions збудує їх)
 dist/
 
 # Logs
