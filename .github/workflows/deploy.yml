@@ -31,13 +31,19 @@ jobs:
       - name: Build CSS
         run: npm run gulp:build
 
+      - name: Prepare deployment folder
+        run: |
+          mkdir -p _site
+          cp demo.html _site/index.html
+          cp -r dist _site/dist
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
 
       - name: Deploy to GitHub Pages
         id: deployment
