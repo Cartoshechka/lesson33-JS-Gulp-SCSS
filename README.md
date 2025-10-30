@@ -122,9 +122,5 @@ $primary-color: #3498db;
   display: -ms-flexbox;
   display: flex;
 }
-```
 
----
-
-**Готово до здачі** ✅
 
